@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+        .dash-container{
+            display: flex;
+        }
+        .dash-card{
+            margin:1.0rem 1.0rem;
+        }
+        .dash-img{
+            /* width:100px; */
+            height:40vh;
+        }
+    </style>
+<div class="container dash-container">
+        {% for hotel in hotels %}  
+        <div class="card dash-card" style="width: 18rem;">
+                <img src="{{hotel.hotel_image.url}}" class="card-img-top dash-img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{hotel.hotel_name}}</h5>
+                  <p class="card-text">location: {{hotel.hotel_location}}</p>
+                  <p class="card-text">stars: {{hotel.hotel_stars}}</p>
+                  <p class="card-text">Address: {{hotel.hotel_address}}</p>
+                  <a href="/booking/" class="btn btn-primary">Book</a>
+                  <br>
+                </div>
+                
+            </div>
+            {% endfor %}
+</div>
+{% endblock %}

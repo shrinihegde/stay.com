@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+        <form action="" method="POST">
+        {% csrf_token %}
+          <h2>Book your rooms here.</h2>  
+          <div class="form-group">
+              <label for="where">Where?</label><br>
+              <select name="" id="">
+                <option value="1">Bangalore</option>
+                <option value="2">Mysore</option>
+                <option value="3">Sirsi</option>
+                <option value="4">Hubli</option>
+              </select>
+            </div>
+          <div class="form-group">
+              <label for="checkin">Check-in</label>
+              <input type="date" class="form-control" id="checkin" placeholder="check-in">
+            </div>
+            <div class="form-group">
+              <label for="checkout">Check-out</label>
+              <input type="date" class="form-control" id="checkout" placeholder="check-out">
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">I'm above 18 years</label>
+            </div>
+            <a href="/dashboard/" class="btn btn-primary">search</a>
+          </form>
+    </div>
+
+{% endblock %}

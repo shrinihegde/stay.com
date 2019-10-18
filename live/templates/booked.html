@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+    p{
+        color:white;
+    }
+</style>
+<div class="container">
+        {% for Booking in Bookings %}
+        <p>Booking status:{{message}}</p>
+        <p>Name:{{Booking.user.first_name}} {{Booking.user.last_name}}</p>
+        <p>Email:{{Booking.user.email}}</p>
+    
+        <p>checkin:{{Booking.checkin}}</p>
+        <p>checkout:{{Booking.checkout}}</p><br><br>
+    {% endfor %}
+</div>
+
+{% endblock %}

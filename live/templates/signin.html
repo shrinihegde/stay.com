@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+        <h3>login</h3>
+        <hr>
+        <form action="/signin/" method="POST">
+            {% csrf_token %}
+            <p>username</p>
+            <input type="text" name="username" class="form-control">
+            <br>
+            <p>password</p>
+            <input type="password" name="password" class="form-control">
+            <br>
+            <label style="color:red;">{{message}}</label>
+            <br>
+            <!-- <select name="usertype" id="">
+                    <option value="1">User</option>
+                    <option value="2">Admin</option>
+                </select>
+                <br>
+                <br> -->
+            <button type="submit">signin</button>
+        </form>
+    </div>
+
+{% endblock %}

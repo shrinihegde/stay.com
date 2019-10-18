@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+        <form action="/hotel/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>Enter hotel name:</p><br>
+            <input type="text" name="hotelname" class="form-control"><br>
+            <p>Enter hotel location:</p><br>
+            <input type="text" name="hotellocation" class="form-control"><br>
+            <p>Enter hotel address:</p><br>
+            <input type="text" name="hoteladdress" class="form-control"><br>
+            <p>Enter hotel stars:</p>
+            <select name="stars" id="star">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+            <p>Enter hotel image:</p>
+            <input type="file" name="hotelimage" accept="images/*"><br><br>
+            <button type="submit" class="btn btn-danger">submit</button>
+        </form>
+</div>
+
+{% endblock %}
